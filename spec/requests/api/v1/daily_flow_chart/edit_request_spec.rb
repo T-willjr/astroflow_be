@@ -16,7 +16,7 @@ RSpec.describe "Edits a Daily Flow Chart" do
           bloating: true,
           cramps: false,
           emotions: "I feel not ok",
-          flow_status: 'light'
+          flow_status: 'Light'
      }
 
     headers = {"CONTENT_TYPE" => "application/json"}

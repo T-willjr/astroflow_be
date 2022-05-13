@@ -1,8 +1,7 @@
 class Api::V1::HoroscopesController < ApplicationController
-  def index 
+  def index
     zodiac_name = params[:sign]
-    render json: { today_horoscope: HoroscopeFacade.get_today_horoscope_moon(zodiac_name), 
-                   yesterday_horoscope: HoroscopeFacade.get_yesterday_horoscope_moon(zodiac_name)
-    }
-  end 
-end 
+    horoscopes = HoroscopeFacade.get_both_horoscopes(zodiac_name)
+    render json: CombinedHoroscopeSerializer.generate(horoscopes)
+  end
+end
